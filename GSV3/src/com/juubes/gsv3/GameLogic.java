@@ -16,8 +16,8 @@ public class GameLogic {
 
 	public void prepareGame() {
 		for (int i = 0; i < Game.ASTEROID_COUNT; i++) {
-			Vector loc = new BasicVector(
-					new double[] { Math.random() * game.getWidth(), Math.random() * game.getHeight() });
+			Vector loc = new BasicVector(new double[] { Math.random() * game.getWidth(), Math.random() * game
+					.getHeight() });
 
 			// Move to center
 			Vector halfScreen = new BasicVector(new double[] { game.getWidth() / 2, game.getHeight() / 2 });
@@ -31,7 +31,7 @@ public class GameLogic {
 	}
 
 	public void tick() {
-		HashSet<Asteroid> tickedAsteroids = new HashSet<Asteroid>();
+		HashSet<Asteroid> tickedAsteroids = new HashSet<>();
 		for (Asteroid asteroid : this.asteroids) {
 			if (asteroid.isColliding())
 				continue;
@@ -63,8 +63,9 @@ public class GameLogic {
 					// Take masses into account
 					// TODO tp to the right place
 
-//					boolean explode = true;
-					boolean explode = (asteroid.getMass() > Game.DEFAULT_MAX_MASS || colliding.getMass() > Game.DEFAULT_MAX_MASS);
+					boolean explode = false;
+					// boolean explode = (asteroid.getMass() > Game.DEFAULT_MAX_MASS ||
+					// colliding.getMass() > Game.DEFAULT_MAX_MASS);
 					if (explode) {
 
 						// Break the two asteroids into 3 pieces flying off
@@ -91,8 +92,8 @@ public class GameLogic {
 
 				// Didn't collide
 				double angle = Math.atan2(dVector.get(1), dVector.get(0));
-				double gravitationalForce = Game.GRAVITATIONAL_CONSTANT
-						* ((asteroid.getMass() * colliding.getMass()) / Math.pow(dVector.euclideanNorm(), 1.8));
+				double gravitationalForce = Game.GRAVITATIONAL_CONSTANT * ((asteroid.getMass() * colliding.getMass())
+						/ Math.pow(dVector.euclideanNorm(), 1.8));
 
 				Vector fVector = new BasicVector(2);
 				fVector.set(0, -Math.cos(angle) * gravitationalForce);

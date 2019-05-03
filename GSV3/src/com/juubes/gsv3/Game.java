@@ -1,7 +1,7 @@
 package com.juubes.gsv3;
 
 public class Game {
-	public static final int ASTEROID_COUNT = 25;
+	public static final int ASTEROID_COUNT = 20;
 	public static final boolean BORDERS = true;
 	public static final double CANVAS_MULTIPLIER = 500;
 	public static final double RADIUS_MULTIPLIER = 1;

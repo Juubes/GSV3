@@ -47,8 +47,8 @@ public class Renderer {
 		}
 		Graphics2D g = (Graphics2D) bs.getDrawGraphics();
 		// Clear screen
-//		g.setColor(new Color(0, 0, 0, 5));
-		g.setColor(Color.BLACK);
+		g.setColor(new Color(0, 0, 0, 5));
+		// g.setColor(Color.BLACK);
 		g.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
 		// Draw asteroids
