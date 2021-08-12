@@ -28,7 +28,7 @@ public class Game {
 		renderer.render();
 
 		try {
-		    Thread.sleep(1000 / 6000);
+		    Thread.sleep(1000 / 120);
 		} catch (Exception e) {
 		}
 	    }
